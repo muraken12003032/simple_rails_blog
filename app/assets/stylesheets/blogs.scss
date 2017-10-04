@@ -1,0 +1,25 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'rouge';
+
+.content {
+  table {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+  
+    th {
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      border: 1px solid #ccc;
+    }
+    
+    td {
+      padding: 10px;
+      vertical-align: top;
+      border: 1px solid #ccc;
+    }
+  }
+}
