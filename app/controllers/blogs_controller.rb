@@ -20,7 +20,6 @@ class BlogsController < ApplicationController
         return
       end
     end
-        
   end
   
   def myblogadmin

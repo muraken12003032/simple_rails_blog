@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   
   resources :blogs do
     collection do 
+      
+      # 管理者ページ
       get 'myblogadmin'
+      
+      # サムネイルの設定ページ
+      get 'thumbnail'
+      
     end
   end
   
@@ -15,6 +21,8 @@ Rails.application.routes.draw do
       post :upload
     end
   end
+  
+  resources :thumbnails, only: [:new, :create, :edit, :update]
   
   
   # The priority is based upon order of creation: first created -> highest priority.
