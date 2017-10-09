@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ 
+ footer {
+   text-align: center;
+   height: 2em;
+   background-color: #000000;
+   color: #FFFFFF;
+ }

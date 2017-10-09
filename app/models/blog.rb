@@ -1,3 +1,3 @@
 class Blog < ActiveRecord::Base
-  has_one :thumbnail
+  belongs_to :picture
 end

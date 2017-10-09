@@ -12,11 +12,6 @@
       </ul>
     </div>
   <% end %>
-  <% if @blog.thumbnail == nil %>
-    <%= link_to 'サムネイル画像を設定', new_thumbnail_path, :class => 'btn btn-default', :target => ["_blank"], :blog_id => @blog.id %>
-  <% else %>
-    <%= link_to 'サムネイル画像を設定', edit_thumbnail_path(@blog.thumbnail.id), :class => 'btn btn-default', :target => ["_blank"], :blog_id => @blog.id %>
-  <% end %>
 
   <%= f.label :status %>
   <%= f.select :status, [["公開", true ], ["下書き", false ]], :class => 'form-horizontal' %>

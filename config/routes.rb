@@ -8,10 +8,18 @@ Rails.application.routes.draw do
       # 管理者ページ
       get 'myblogadmin'
       
+    end
+    
+    member do
+      
       # サムネイルの設定ページ
       get 'thumbnail'
       
+      # 公開ページ
+      post 'publish'
+      
     end
+    
   end
   
   resources :sessions
@@ -21,9 +29,6 @@ Rails.application.routes.draw do
       post :upload
     end
   end
-  
-  resources :thumbnails, only: [:new, :create, :edit, :update]
-  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
