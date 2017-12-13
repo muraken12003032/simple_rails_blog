@@ -60,5 +60,11 @@
 #     # password: 'please use keys'
 #   }
 
-server '150.95.145.101', user: 'app', roles: %w{app db web}
-set :ssh_options, keys: '/home/k_murata/.ssh/id_rsa'
+server '150.95.145.101', user: 'k_murata', roles: %w{app db web}
+#set :ssh_options, keys: '/home/k_murata/.ssh/id_rsa'
+#set :ssh_options, keys: '/home/k_murata/.ssh/id_rsa', password: 'mken2525'
+set :ssh_options, {
+  port: "912",
+  keys: '/home/ubuntu/.ssh/id_rsa_conoha',
+  auth_methods: %w(publickey)
+}

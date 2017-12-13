@@ -1,11 +1,12 @@
 lock '3.6.0'
 
 # デプロイするアプリケーション名
-set :application, 'achieve'
+set :application, 'simpleblog'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 #set :repo_url, 'https://github.com/kenmurata/yyyyyyyy'
-set :repo_url, 'https://bitbucket.org/ken_murata/simpleblog'
+#set :repo_url, 'https://bitbucket.org/ken_murata/simpleblog'
+set :repo_url, 'git@bitbucket.org:ken_murata/simpleblog.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
@@ -21,8 +22,8 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 set :keep_releases, 5
 
 # Rubyのバージョン
+set :rbenv_ruby, '2.3.0'
 ###set :rbenv_ruby, '2.3.0'
-set :rbenv_ruby, '2.4.0'
 set :rbenv_type, :system
 
 #出力するログのレベル。
