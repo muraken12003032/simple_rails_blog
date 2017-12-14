@@ -1,5 +1,4 @@
 <h1>新規投稿</h1>
-<div class="col-sm-12"><%= image_tag @picture_last.image , :class => 'img img-rounded'%></div>
 <%= form_for(@picture, url: upload_pictures_path, method: :post) do |f| %>
   
   <!-- 入力フォーム -->
