@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   
   def index
     @blogs = Blog.where(:status => true).order('id desc')
-    @noimage = Picture.find_by(:image => 'noimage.png')
+    @noimage = Picture.find_by(:image => 'noimagenoimagenoimage.jpg')
   end
   
   def edit
