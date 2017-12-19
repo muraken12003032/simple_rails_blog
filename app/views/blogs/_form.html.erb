@@ -22,7 +22,11 @@
   <%= f.label :content %>
   <%= f.text_area :content, class: 'form-control' , size: "100x30" %>
   <br>
-  <%= f.label :status %>
+  <!-- 既に保存済みであればプレビューへのリンクを表示 -->
+  <% if @blog.id != nil %>
+    <%= link_to 'プレビュー', blog_path(@blog.id) , :class => 'btn btn-primary btn-block' %>
+  <% end %>
+  <br>
   <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 <% end %>
 
