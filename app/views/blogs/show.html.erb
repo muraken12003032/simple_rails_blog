@@ -15,6 +15,9 @@
       <hr>
       <%= link_to 'TOP', root_path, :class => 'btn btn-default' %>
       <%= link_to 'back', :back, :class => 'btn btn-default' %>
+      <% if current_user != nil %>
+        <%= link_to '編集', edit_blog_path(@blog.id), :class => 'btn btn-default' %>
+      <% end %>
     </div>
   </div>
 </div>
