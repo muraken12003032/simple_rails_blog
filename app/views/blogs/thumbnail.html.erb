@@ -8,6 +8,13 @@
       <% else %>
         <%= image_tag(@blog.picture.image.thumb) %>
       <% end %>
+      <h3>アップロードする</h3>
+      <%= form_for(@upload, url: upload_pictures_path, method: :post) do |f| %>
+        <%= f.label :"写真を選択" %>
+        <%= f.file_field :image %>
+        <br>
+        <%= f.submit 'アップロード', :class => 'btn btn-primary' %>
+      <% end %>
       
       <h3>画像を設定する</h3>
       <%= form_for(@blog) do |f| %>

@@ -1,14 +1,14 @@
 class PicturesController < ApplicationController
   
   def index
-    @picture_last = Picture.last
+    @pictures = Picture.all
     @picture = Picture.new
   end
   
   def upload
     @picture = Picture.new(picture_params)
     if @picture.save
-      redirect_to root_path, notice: '画像の投稿が完了しました'
+      redirect_to :back , notice: '画像の投稿が完了しました'
     else
       render 'new'
     end
@@ -21,6 +21,9 @@ class PicturesController < ApplicationController
   end
   
   def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to :back, notice: "画像を削除しました!"
   end
   
   private

@@ -80,6 +80,7 @@ class BlogsController < ApplicationController
     
     @blog = Blog.find(params[:id])
     @pictures = Picture.all
+    @upload = Picture.new
     
   end
   
