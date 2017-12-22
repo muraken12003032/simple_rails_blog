@@ -18,19 +18,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="navbar navbar-brand">瀬戸内の雲のように</div>
+          <!-- ロゴ。アプリ名が決まらないので今回は消しておく -->
+          <%= link_to root_path do %>
+            <%= image_tag('logo_small.png', :class => 'img img-responsive') %>
+          <% end %>
+          <!--<div class="navbar navbar-brand">瀬戸内の雲のように</div>-->
         </div>
         
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "TOP", root_path , :class => 'mycssclass' %></li>
-            <% if current_user != nil %>
+        <% if current_user != nil %>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
               <li><%= link_to "ログアウト", session_path(current_user.id),:method => 'delete' , :class => 'mycssclass' %></li>
               <li><%= link_to '管理者ページ', myblogadmin_blogs_path %></li>
               <li><%= link_to '画像', pictures_path %></li>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        <% end %>
       </div><!-- /.container-fluid -->
     </nav>
   </header>
