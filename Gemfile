@@ -62,3 +62,4 @@ gem 'rmagick', require: 'RMagick'
 
 gem 'dotenv-rails'
 gem 'unicorn'
+gem 'google-analytics-rails'
