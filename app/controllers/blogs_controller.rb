@@ -95,7 +95,8 @@ class BlogsController < ApplicationController
     end
     
     # 最新5件のブログを表示
-    @blogs = Blog.order('id desc').first(5)
+    # →全件に修正
+    @blogs = Blog.all.order('id desc')
   end
   
   private
