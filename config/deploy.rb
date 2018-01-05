@@ -58,10 +58,11 @@ namespace :deploy do
   end
 
   after :publishing, :restart
-  after 'deploy:restart', 'deploy:sitemap:create'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+  
+  after 'deploy:restart', 'deploy:sitemap:create'
 end
