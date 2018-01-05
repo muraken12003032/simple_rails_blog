@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>瀬戸内の雲のように</title>
-  <%= analytics_init if Rails.env.production? %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- google adsense below-->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script type="text/javascript">
+<head><!-- google adsense below--><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
     (adsbygoogle = window.adsbygoogle || []).push({
       google_ad_client: "ca-pub-9447884739029433",
       enable_page_level_ads: true
     });
   </script>
   <!-- google adsense above-->
+  <title>瀬戸内の雲のように</title>
+  <%= analytics_init if Rails.env.production? %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <header>
