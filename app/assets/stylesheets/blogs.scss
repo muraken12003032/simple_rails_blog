@@ -21,6 +21,7 @@
       vertical-align: top;
       border: 1px solid #ccc;
     }
+    
   }
 }
 
@@ -35,4 +36,23 @@
 
 .col-thumbnail {
   padding-top: 20px;
+}
+
+.blog-title {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: x-large !important;
+  font-weight: bold !important;
+  border-bottom: solid 1px #BBBBBB;
+  margin-bottom: 10px !important;
+  margin-top: 40px !important;
+}
+h3 {
+  font-size: large !important;
+  font-weight: bold !important;
+  border-bottom: dashed 1px #BBBBBB;
+  margin-bottom: 10px !important;
+  margin-top: 20px !important;
 }

@@ -10,7 +10,7 @@
       <% if @blog.picture != nil %>
         <%= image_tag(@blog.picture.image.size_400x300) %>
       <% end %>
-      <p><%= markdown(@blog.content) %></p>
+      <%= markdown(@blog.content) %>
       
       <hr>
       <%= link_to 'TOP', root_path, :class => 'btn btn-default' %>

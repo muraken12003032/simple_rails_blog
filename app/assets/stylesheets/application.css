@@ -19,6 +19,7 @@ html {
 }
 body {
  margin-bottom: 3em;
+ font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 footer {
     position: absolute;
@@ -28,4 +29,7 @@ footer {
     height: 2em;
     background-color: #000000;
     color: #FFFFFF;
+}
+hr {
+  border: solid 2px #000000 !important;
 }
