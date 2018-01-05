@@ -44,7 +44,7 @@
             <td><%= blog.content.first(20)%>...</td>
             <td><%= link_to '編集', edit_blog_path(blog.id) %></td>
             <td><%= link_to '確認', blog_path(blog.id) %></td>
-            <td><%= link_to '削除', blog_path(blog.id), :confirm => '削除しても宜しいですか？',  :method => 'delete' %></td>
+            <td><%= link_to '削除', blog_path(blog.id),  :method => 'delete' , data: {confirm: '削除しても宜しいですか？'} %></td>
           </tr>
         <% end %>
       </table>
