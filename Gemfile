@@ -66,3 +66,6 @@ gem 'google-analytics-rails'
 
 # pager
 gem 'kaminari'
+
+# SEO
+gem "sitemap_generator"

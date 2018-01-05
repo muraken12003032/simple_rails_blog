@@ -107,7 +107,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
-    libv8 (3.16.14.19-x86_64-linux)
+    libv8 (3.16.14.19)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -176,6 +176,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sitemap_generator (6.0.0)
+      builder (~> 3.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -241,6 +243,7 @@ DEPENDENCIES
   rouge
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sitemap_generator
   spring
   therubyracer
   turbolinks

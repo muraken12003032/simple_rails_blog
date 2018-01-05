@@ -11,3 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore Sitemap File
+public/sitemap.xml.gz
