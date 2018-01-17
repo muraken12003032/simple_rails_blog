@@ -1,6 +1,6 @@
 <%= image_tag('setouchi.jpg', :size => "200x100") %>
 <%= markdown(@profile.content) %>
-<h3>最新の投稿</h3>
+<h3>最近の投稿</h3>
 <% @latest5.each do |latest_blog| %>
     <%= link_to latest_blog.title[0,20], blog_path(latest_blog.id) %>
     <br>
