@@ -53,7 +53,7 @@ namespace :deploy do
   task :sitemap do
     on roles(:app) do
       within release_path do
-        execute :bundle, :exec, 'sitemap:create RAILS_ENV=production'
+        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
       end
     end
   end
@@ -61,7 +61,7 @@ namespace :deploy do
   desc 'set crontab'
   task :whenever do
     on roles(:app) do
-      execute :bundle, :exec, :rake, 'whenever --update-crontab'
+      execute :bundle, :exec, 'whenever --update-crontab'
     end
   end
 
