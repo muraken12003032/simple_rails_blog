@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, :get_latest5
   
   def index
     @blogs = Blog.where(:status => true).order('id desc').page(params[:page])
@@ -112,5 +112,9 @@ class BlogsController < ApplicationController
       else
         @profile = Blog.find_by(:title => '--profile--')
       end
+    end
+    
+    def get_latest5
+      @latest5 = Blog.where(:status => true).order('id desc').limit(5)
     end
 end
