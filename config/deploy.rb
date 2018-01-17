@@ -61,7 +61,9 @@ namespace :deploy do
   desc 'set crontab'
   task :whenever do
     on roles(:app) do
-      execute :bundle, :exec, 'whenever --update-crontab'
+      within release_path do
+        execute :bundle, :exec, 'whenever --update-crontab'
+      end
     end
   end
 
