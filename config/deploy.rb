@@ -57,6 +57,13 @@ namespace :deploy do
       end
     end
   end
+  
+  desc 'set crontab'
+  task :whenever do
+    on roles(:app) do
+      execute :bundle, :exec, :rake, 'whenever'
+    end
+  end
 
   desc 'Run seed'
   task :seed do
@@ -77,5 +84,5 @@ namespace :deploy do
   end
   
   after :deploy, "deploy:sitemap"
-  after :deploy, 'whenever_identifier'
+  after :deploy, 'deploy:whenever'
 end
