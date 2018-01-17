@@ -77,4 +77,5 @@ namespace :deploy do
   end
   
   after :deploy, "deploy:sitemap"
+  after :deploy, 'whenever_identifier'
 end
