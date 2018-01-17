@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :set_profile
   
   def index
     @blogs = Blog.where(:status => true).order('id desc').page(params[:page])
@@ -102,5 +103,14 @@ class BlogsController < ApplicationController
   private
     def blog_params
       params.require(:blog).permit(:title, :content, :tag, :genre, :status, :picture_id)
+    end
+    
+    def set_profile
+      if Blog.find_by(:title => '--profile--') == nil
+        @profile = Blog.new
+        @profile.content = '<br>プロフィールが未登録です<br>ブログの件名を"--profile--"にして登録すると本文がこの部分に表示されます。'
+      else
+        @profile = Blog.find_by(:title => '--profile--')
+      end
     end
 end
