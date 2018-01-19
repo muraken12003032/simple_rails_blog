@@ -20,7 +20,8 @@
   <%= f.text_field :title, class: 'form-control' %>
   <br>
   <%= f.label :content %>
-  <%= f.text_area :content, class: 'form-control' , size: "100x30" %>
+  <%= f.text_area :content, :id => 'blog_content', class: 'form-control' , size: "100x30" %>
+  <p id="length_check">0文字</p>
   <br>
   <%= f.submit '保存', class: 'btn btn-primary' %>
   <% if @blog.id != nil %>
