@@ -72,3 +72,6 @@ gem "sitemap_generator"
 
 # crontab
 gem 'whenever', require: false
+
+# mojisuu counter
+gem 'jquery-turbolinks'
