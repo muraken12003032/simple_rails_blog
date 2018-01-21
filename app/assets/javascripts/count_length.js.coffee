@@ -1,8 +1,5 @@
 ready = ->
-  $("p#length_check").dblclick ->
-    alert("hello world!")
-  
-  $("#blog_content").change ->
+  $("#blog_content").keyup ->
     $("p#length_check").html(count_length)
     
   count_length = ->
@@ -10,4 +7,4 @@ ready = ->
     return msg
     
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)
