@@ -3,7 +3,7 @@ module ApplicationHelper
   require 'rouge'
   require 'rouge/plugins/redcarpet'
   
-  @@toc = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC
+  @@toc = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC, :fenced_code_blocks => true
   
   def markdown(text)
     render_options = {
