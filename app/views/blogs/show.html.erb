@@ -22,6 +22,12 @@
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+      
+      <%# ブログ目次 %>
+      <h2>目次</h2>
+      <%= table_of_content(@blog.content) %>
+      
+      <%# ブログ本文 %>
       <%= markdown(@blog.content) %>
       
       <hr>

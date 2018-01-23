@@ -3,10 +3,13 @@ module ApplicationHelper
   require 'rouge'
   require 'rouge/plugins/redcarpet'
   
+  @@toc = Redcarpet::Markdown.new Redcarpet::Render::HTML_TOC
+  
   def markdown(text)
     render_options = {
       filter_html: false,
-      hard_wrap: true
+      hard_wrap: true,
+      with_toc_data: true
     }
     
     #renderer = Redcarpet::Render::HTML.new(render_options)
@@ -23,5 +26,9 @@ module ApplicationHelper
     }
     
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+  end
+  
+  def table_of_content(text)
+    @@toc.render(text).html_safe
   end
 end
