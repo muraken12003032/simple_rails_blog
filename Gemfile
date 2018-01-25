@@ -69,6 +69,7 @@ gem 'kaminari'
 
 # SEO
 gem "sitemap_generator"
+gem "meta-tags"
 
 # crontab
 gem 'whenever', require: false

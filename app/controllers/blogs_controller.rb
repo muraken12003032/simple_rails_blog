@@ -16,7 +16,13 @@ class BlogsController < ApplicationController
   end
   
   def show
+    
+    # IDからブログを取得
     @blog = Blog.find(params[:id])
+    
+    # ブラウザのタブに表示されるtitleを記事のタイトルにする
+    prepare_meta_tags(title: @blog.title)
+    
     if @blog.status == false
       if current_user == nil
         redirect_to root_path, notice: "存在しないURLです"

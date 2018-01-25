@@ -8,12 +8,11 @@
     });
   </script>
   <!-- google adsense above-->
-  <title>瀬戸内の雲のように</title>
   <%= analytics_init if Rails.env.production? %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= display_meta_tags reverse: true %>
 </head>
 <body>
   <header>
