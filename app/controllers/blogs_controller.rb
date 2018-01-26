@@ -121,7 +121,7 @@ class BlogsController < ApplicationController
   
   private
     def blog_params
-      params.require(:blog).permit(:title, :content, :tag, :genre, :status, :picture_id)
+      params.require(:blog).permit(:title, :content, :tag, :genre, :status, :picture_id, :description)
     end
     
     def set_profile

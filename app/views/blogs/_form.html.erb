@@ -19,6 +19,9 @@
   <%= f.label :title %>
   <%= f.text_field :title, class: 'form-control' %>
   <br>
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control',size: 'x3' %>
+  <br>
   <%= f.label :content %>
   <%= f.text_area :content, :id => 'blog_content', class: 'form-control' , size: "100x30" %>
   <p id="length_check">0文字</p>
