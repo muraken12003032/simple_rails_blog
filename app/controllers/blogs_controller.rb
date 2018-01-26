@@ -97,6 +97,9 @@ class BlogsController < ApplicationController
   # 管理者ページ
   def myblogadmin
     
+    # titleを修正
+    prepare_meta_tags(title: "管理者ページ")
+    
     # ログインしていないユーザの場合はログイン画面へリダイレクト
     if current_user == nil
       redirect_to new_session_path
