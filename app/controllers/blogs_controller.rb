@@ -9,10 +9,12 @@ class BlogsController < ApplicationController
   
   def edit
     @blog = Blog.find(params[:id])
+    prepare_meta_tags(title: "記事の編集")
   end
   
   def new
     @blog = Blog.new
+    prepare_meta_tags(title: "記事の新規作成")
   end
   
   def show
