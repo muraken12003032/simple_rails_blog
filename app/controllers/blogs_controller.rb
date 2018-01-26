@@ -22,8 +22,16 @@ class BlogsController < ApplicationController
     # IDからブログを取得
     @blog = Blog.find(params[:id])
     
+    # descriptionを設定
+    if @blog.description == nil
+      # descriptionが未記入なら、本文の先頭100文字を記入
+      description = @blog.content[0,100].gsub('#','')
+    else
+      description = @blog.description
+    end
+    
     # ブラウザのタブに表示されるtitleを記事のタイトルにする
-    prepare_meta_tags(title: @blog.title)
+    prepare_meta_tags(title: @blog.title, description: description)
     
     if @blog.status == false
       if current_user == nil
