@@ -97,7 +97,7 @@ class BlogsController < ApplicationController
     end
     
     @blog = Blog.find(params[:id])
-    @pictures = Picture.all
+    @pictures = Picture.all.order('id desc')
     @upload = Picture.new
     
   end
