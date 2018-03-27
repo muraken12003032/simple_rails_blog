@@ -1,0 +1,14 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+  
+    <%# コメント投稿者名 %>
+    <% if comment.name == nil %>
+      <p class="left"><b>名無しさん</b></p>
+    <% else %>
+      <p class="left"><b><%= comment.name %>さん</b></p>
+    <% end %>
+    
+    <%# コメント内容 %>
+    <p class="left"><%= comment.content %></p>
+  <% end %>
+<% end %>

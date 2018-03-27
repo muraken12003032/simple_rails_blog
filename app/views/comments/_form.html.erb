@@ -1,0 +1,26 @@
+<%= form_for([blog,comment]) do |f| %>
+
+  <%# エラー処理 %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= comment.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%# コメント欄の表示 %>
+  <%= f.hidden_field :blog_id %>
+  <br>
+  <p>お名前</p>
+  <%= f.text_field :name, placeholder: "お名前", class: "form-control" %>
+  <br>
+  <p>コメント内容</p>
+  <%= f.text_area :content, placeholder: "コメントを記入してください", class: "form-control", size: 'x3' %>
+  <br>
+  <%= f.submit 'コメントする', class: 'btn btn-primary' %>
+<% end %>

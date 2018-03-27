@@ -22,6 +22,14 @@ class BlogsController < ApplicationController
     # IDからブログを取得
     @blog = Blog.find(params[:id])
     
+    # 公開中か確認し、公開しない場合はTOPに戻る
+    if @blog.status == false
+      if current_user == nil
+        redirect_to root_path, notice: "存在しないURLです"
+        return
+      end
+    end
+    
     # descriptionを設定
     if @blog.description == nil
       # descriptionが未記入なら、本文の先頭100文字を記入
@@ -33,12 +41,12 @@ class BlogsController < ApplicationController
     # ブラウザのタブに表示されるtitleを記事のタイトルにする
     prepare_meta_tags(title: @blog.title, description: description)
     
-    if @blog.status == false
-      if current_user == nil
-        redirect_to root_path, notice: "存在しないURLです"
-        return
-      end
-    end
+    # 既存コメントを取得
+    @comments = @blog.comments
+    
+    # 新規コメント用インスタンスを作成
+    @comment = @blog.comments.build
+    
   end
   
   def create

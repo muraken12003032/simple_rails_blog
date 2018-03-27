@@ -7,11 +7,7 @@
       <h1><%= @blog.title %></h1>
       <h4 class="text text-muted">Posted: <%= @blog.created_at.strftime('%Y-%m-%d') %></h4>
       <hr>
-      <%# 元々画像を表示していたが、広告を張ると本文までが遠くなっちゃうので一旦消す %>
-      <%# if @blog.picture != nil %>
-        <%#= image_tag(@blog.picture.image.size_400x300) %>
-      <%# end %>
-      <p>スポンサードリンク</p>
+      <p>スポンサーリンク</p>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- レスポンシブ -->
       <ins class="adsbygoogle"
@@ -31,7 +27,7 @@
       <%= markdown(@blog.content) %>
       
       <hr>
-      <p>スポンサードリンク</p>
+      <p>スポンサーリンク</p>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- レスポンシブ_記事下 -->
       <ins class="adsbygoogle"
@@ -43,8 +39,17 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       
-      <br>
-      <hr>
+      <%# コメント欄 %>
+      <br><hr>
+      <h3>コメント一覧</h3>
+      <% if @comments != nil %>
+        <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
+      <% end %>
+      
+      <h3>コメントを投稿する</h3>
+      <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
+      
+      <br><hr>
       <%= link_to 'TOP', root_path, :class => 'btn btn-default' %>
       <%= link_to 'back', :back, :class => 'btn btn-default' %>
       <% if current_user != nil %>
