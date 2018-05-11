@@ -40,18 +40,22 @@
       </script>
       
       <%# コメント欄 %>
-      <br><hr>
-      <h3>コメント一覧</h3>
+      <br><hr><hr>
+      <h2 class="text text-primary">コメント一覧</h2>
       <% if @comments != nil %>
         <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
       <% end %>
       
-      <h3>コメントを投稿する</h3>
+      <%# コメント投稿画面 %>
+      <hr>
+      <h2 class="text text-primary">コメントを投稿する</h2>
       <%= render partial: 'comments/form', locals: { comment: @comment, blog: @blog } %>
       
       <br><hr>
       <%= link_to 'TOP', root_path, :class => 'btn btn-default' %>
       <%= link_to 'back', :back, :class => 'btn btn-default' %>
+      
+      <%# ログイン済の場合は編集ボタンを表示 %>
       <% if current_user != nil %>
         <%= link_to '編集', edit_blog_path(@blog.id), :class => 'btn btn-default' %>
       <% end %>

@@ -6,9 +6,11 @@ class CommentsController < ApplicationController
     
     @blog = @comment.blog
     
-    # クライアント要求に応じてフォーマットを変更
-    if @comment.save
+    # 人間が書いているかどうかをチェック
+    if verify_recaptcha(model: @comment) && @comment.save
       redirect_to blog_path(@blog), notice: 'コメントを投稿しました。'
+    else
+      redirect_to blog_path(@blog), notice: 'コメント投稿に失敗しました。'
     end
   end
 

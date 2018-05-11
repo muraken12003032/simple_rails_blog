@@ -14,3 +14,6 @@
 
 # Ignore Sitemap File
 public/sitemap.xml.gz
+
+# dotenv-rails
+.env

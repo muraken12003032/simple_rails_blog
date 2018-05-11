@@ -22,5 +22,10 @@
   <p>コメント内容</p>
   <%= f.text_area :content, placeholder: "コメントを記入してください", class: "form-control", size: 'x3' %>
   <br>
+  
+  <%# botを回避するためのチェック: recaptcha %>
+  <%= recaptcha_tags %>
+  <br>
+  
   <%= f.submit 'コメントする', class: 'btn btn-primary' %>
 <% end %>

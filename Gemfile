@@ -76,3 +76,6 @@ gem 'whenever', require: false
 
 # mojisuu counter
 gem 'jquery-turbolinks'
+
+# comment authentication
+gem "recaptcha", require: "recaptcha/rails"
