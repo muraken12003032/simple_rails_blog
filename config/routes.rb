@@ -20,6 +20,10 @@ Rails.application.routes.draw do
       
     end
     
+    
+    # コメント
+    resources :comments
+    
   end
   
   resources :sessions

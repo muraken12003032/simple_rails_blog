@@ -1,0 +1,20 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+  
+    <%# コメント投稿日 %>
+    <p><%= comment.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+    
+    <%# コメント投稿者名 %>
+    <h4 class="left">
+      <% if comment.name == "" or comment.name == nil %>
+        <b>名無しさん</b>
+      <% else %>
+        <b><%= comment.name %>さん</b>
+      <% end %>
+    </h4>
+    
+    <%# コメント内容 %>
+    <p class="left"><%= comment.content %></p>
+    <hr class="hr-comment">
+  <% end %>
+<% end %>
