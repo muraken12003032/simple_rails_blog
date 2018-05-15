@@ -79,3 +79,6 @@ gem 'jquery-turbolinks'
 
 # comment authentication
 gem "recaptcha", require: "recaptcha/rails"
+
+# social share button <-- kekkyoku tukawanakatta
+#gem 'social-share-button'
