@@ -56,7 +56,7 @@ loadFacebookSDK = ->
 initializeFacebookSDK = ->
   FB.init
     appId     : 2129513473745363
-    #channelUrl: '//setouchino.cloud/channel.html'
+    channelUrl: '//www.setouchino.cloud/channel.html'
     status    : true
     cookie    : true
     xfbml     : true

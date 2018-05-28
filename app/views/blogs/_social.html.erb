@@ -1,7 +1,6 @@
 <div class="social clearfix">
 
     <!-- Facebook -->
-    <!--
     <div class="button facebook">
         <div id="fb-root"></div>
         <div class="fb-like"
@@ -12,12 +11,22 @@
             data-show-faces="false">
         </div>
     </div>
-    -->
+    
     
     <!-- facebook share -->
-    <div class="fb-share-button" data-href="https://www.setouchino.cloud/blogs/<%= @blog.id %>" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.setouchino.cloud%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a>
+    <!--
+    <div class="button facebook">
+        <div class="fb-share-button"
+            data-href="<%= request.original_url %>"
+            data-layout="button_count"
+            data-size="small"
+            data-mobile-iframe="true">
+            <%# <a target="_blank" %>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.setouchino.cloud%2F&amp;src=sdkpreparse" 
+                class="fb-xfbml-parse-ignore">シェア</a>
+        </div>
     </div>
+    -->
 
     <!-- Twitter -->
     <div class="button twitter">
@@ -27,19 +36,6 @@
             data-text="<%= @blog.title %>"
         >Tweet</a>
     </div>
-
-    
-    <!-- Pocket -->
-    <!--
-    <div class="button pocket">
-        <a href="https://getpocket.com/save" class="pocket-btn"
-            data-lang="en"
-        data-save-url="<%= request.original_url %>"
-        data-pocket-count="horizontal" 
-        data-pocket-align="left"
-      >Pocket</a>
-    </div>
-    -->
 
     <!-- Google plusone -->
     <div class="button google">

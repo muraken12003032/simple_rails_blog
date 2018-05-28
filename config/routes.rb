@@ -20,7 +20,6 @@ Rails.application.routes.draw do
       
     end
     
-    
     # コメント
     resources :comments
     
@@ -33,6 +32,8 @@ Rails.application.routes.draw do
       post :upload
     end
   end
+  
+  get 'privacypolicy' => 'privacypolicy#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -12,11 +12,10 @@
   <%# facebook share button %>
   <div id="fb-root"></div>
     <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      var js, fjs = d.getElementsByTagName(script)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=2129513473745363&autoLogAppEvents=1';
-      js.async = true;
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
   
@@ -30,9 +29,9 @@
       a("https://apis.google.com/js/plusone.js");
       a("//b.st-hatena.com/js/bookmark_button_wo_al.js");
       a("//platform.twitter.com/widgets.js","twitter-wjs");
-      a("https://widgets.getpocket.com/v1/j/btn.js?v=1");
     })(this, document);
   </script>
+  <%# social_share_button %>
   
   <%= analytics_init if Rails.env.production? %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -43,7 +42,6 @@
   <%# favicon %>
   <%= favicon_link_tag() %>
   
-  <%# social_share_button %>
 </head>
 <body>
   <header>
@@ -79,5 +77,5 @@
 </body>
 </html>
 <footer>
-  <p>瀬戸内の雲のように Since 2017 Copyright K.M</p>
+  <p>瀬戸内の雲のように Since 2017 Copyright K.M | <%= link_to 'プライバシーポリシー', privacypolicy_path %></p>
 </footer>
