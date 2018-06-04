@@ -63,7 +63,7 @@ namespace :deploy do
     on roles(:app) do
       
       # 前回の奴を削除
-      within previous_path do
+      within previous_release do
         execute :bundle, :exec, 'whenever --clear-crontab'
       end
       
