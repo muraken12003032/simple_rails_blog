@@ -62,6 +62,7 @@ namespace :deploy do
   task :whenever do
     on roles(:app) do
       within release_path do
+        # これをつけないとずっと追記され続ける模様
         execute :bundle, :exec, 'whenever --clear-crontab'
         execute :bundle, :exec, 'whenever --update-crontab'
       end
