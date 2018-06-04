@@ -61,9 +61,13 @@ namespace :deploy do
   desc 'set crontab'
   task :whenever do
     on roles(:app) do
-      within release_path do
-        # これをつけないとずっと追記され続ける模様
+      
+      # 前回の奴を削除
+      within previous_path do
         execute :bundle, :exec, 'whenever --clear-crontab'
+      end
+      
+      within release_path do
         execute :bundle, :exec, 'whenever --update-crontab'
       end
     end
