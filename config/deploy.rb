@@ -53,7 +53,7 @@ namespace :deploy do
   task :sitemap do
     on roles(:app) do
       within release_path do
-        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+        execute :bundle, :exec, :rake, 'sitemap:create RAIS_ENV=production'
       end
     end
   end
@@ -62,13 +62,14 @@ namespace :deploy do
   task :whenever do
     on roles(:app) do
       
-      # 前回の奴を削除
-      within previous_release do
-        execute :bundle, :exec, 'whenever --clear-crontab'
-      end
+      # 前回の奴を削除 <-- 動かない
+      #within previous_release do
+        #execute :bundle, :exec, 'whenever --clear-crontab'
+      #end
       
       within release_path do
-        execute :bundle, :exec, 'whenever --update-crontab'
+        #execute :bundle, :exec, 'whenever --update-crontab'
+        execute :bundle, :exec, 'whenever --write-crontab'
       end
     end
   end
