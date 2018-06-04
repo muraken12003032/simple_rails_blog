@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://setouchino.cloud"
+SitemapGenerator::Sitemap.default_host = "https://www.setouchino.cloud"
 
 SitemapGenerator::Sitemap.create do
   # 全体
@@ -11,6 +11,9 @@ SitemapGenerator::Sitemap.create do
       add blog_path(blog.id), :lastmod => blog.updated_at
     end
   end
+  
+  # プライバシーポリシー
+  add privacypolicy_path, :priority => 0.5, :changefreq => 'weekly'
   
   # Put links creation logic here.
   #
