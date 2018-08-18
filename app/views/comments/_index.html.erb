@@ -14,7 +14,8 @@
     </h4>
     
     <%# コメント内容 %>
-    <p class="left"><%= comment.content %></p>
+    <!-- <p class="left"><%= comment.content %></p> -->
+    <p class="left"><%= markdown(comment.content) %></p>
     <hr class="hr-comment">
   <% end %>
 <% end %>
