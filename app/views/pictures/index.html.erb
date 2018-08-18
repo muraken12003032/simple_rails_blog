@@ -15,7 +15,7 @@
         <table class='table'>
           <tr>
             <td><%= image_tag(picture.image.thumb) %></td>
-            <td><%= picture.image.thumb %></td>
+            <td>![picture](<%= picture.image %>)<br>![picture](<%= picture.image.size_400x300 %>)</td>
             <td><%= link_to '削除', picture_path(picture.id), :class => 'btn btn-danger' ,:confirm => '削除しても宜しいですか？',  :method => 'delete' %></td>
           </tr>
         </table>
