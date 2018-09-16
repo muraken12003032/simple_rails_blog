@@ -3,7 +3,8 @@
     <div class="col-xs-12">
       <%= notice %>
       <h1>管理者ページ</h1>
-      <%= link_to '新規投稿', new_blog_path, :class => 'btn btn-primary' %>
+      <%= link_to 'ブログ新規投稿', new_blog_path, :class => 'btn btn-primary' %>
+      <%= link_to 'コメント一覧',mycommentadmin_blogs_path , :class => 'btn btn-default' %>
       <%= link_to 'ログアウト', session_path(current_user.id), :confirm => 'ログアウトしますか？',  :method => :delete , :class => 'btn btn-default' %>
       <%= link_to 'TOP',root_path , :class => 'btn btn-default' %>
     </div>

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       # 管理者ページ
       get 'myblogadmin'
       
+      # 管理者ページ
+      get 'mycommentadmin'
+      
     end
     
     member do

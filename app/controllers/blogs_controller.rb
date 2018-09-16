@@ -127,6 +127,23 @@ class BlogsController < ApplicationController
     @blogs = Blog.all.order('id desc')
   end
   
+  # 管理者ページその2(コメント一覧)
+  def mycommentadmin
+    
+    # titleを修正
+    prepare_meta_tags(title: "コメント一覧")
+    
+    # ログインしていないユーザの場合はログイン画面へリダイレクト
+    if current_user == nil
+      redirect_to new_session_path
+      return
+    end
+    
+    # 最新5件のブログを表示
+    # →全件に修正
+    @comments = Comment.all.order('id desc')
+  end
+  
   private
     def blog_params
       params.require(:blog).permit(:title, :content, :tag, :genre, :status, :picture_id, :description)
