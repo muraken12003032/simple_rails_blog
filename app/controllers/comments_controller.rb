@@ -13,7 +13,13 @@ class CommentsController < ApplicationController
       redirect_to blog_path(@blog), notice: 'コメント投稿に失敗しました。'
     end
   end
-
+  
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to blogs_path, notice: "コメントを削除しました!"
+  end
+  
   private
     # ストロングパラメーター
     def comment_params

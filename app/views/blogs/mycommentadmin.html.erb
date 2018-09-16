@@ -5,12 +5,14 @@
       <th>作成日</th>
       <th>記事件名</th>
       <th>コメント本文</th>
+      <th>削除</th>
     </tr>
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.created_at.strftime('%Y-%m-%d') %></td>
         <td><%= link_to Blog.find(comment.blog_id).title.first(20), blog_path(comment.blog_id) %></td>
         <td><%= comment.content.first(20)%>...</td>
+        <td><%= link_to '削除', blog_comment_path(comment.blog_id, comment.id),  :method => 'delete' , data: {confirm: '削除しても宜しいですか？'} %></td>
       </tr>
     <% end %>
   </table>
